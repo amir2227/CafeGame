@@ -1,6 +1,7 @@
 package com.cafe.game.user.payload.request;
 
-import com.ngn.auth.authservice.enums.UserState;
+import com.cafe.game.user.enums.UserState;
+
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

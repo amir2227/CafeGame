@@ -32,7 +32,7 @@ public class Shop {
     @Column
     private String description;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Image> images = new ArrayList<>();
 
     @ManyToOne

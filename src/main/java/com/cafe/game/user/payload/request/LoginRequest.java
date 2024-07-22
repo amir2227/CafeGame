@@ -1,7 +1,7 @@
 package com.cafe.game.user.payload.request;
 
 
-import com.ngn.auth.authservice.utils.annotations.ValidName;
+
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -17,7 +17,6 @@ import lombok.Setter;
 public class LoginRequest {
 
     @NotEmpty(message = "username cannot be empty")
-    @ValidName(message = "invalid username format")
     private String username;
     @NotNull
     @Size(min = 6,max = 64)

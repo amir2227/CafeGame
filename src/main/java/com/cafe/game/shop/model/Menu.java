@@ -27,8 +27,11 @@ public class Menu {
 
     @Column(nullable = false)
     private String name;
+    @Column
+    private Boolean active = true;
 
-    private Boolean active;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Image> images = new ArrayList<>();
 
     @ManyToMany
     private List<Product> products = new ArrayList<>();

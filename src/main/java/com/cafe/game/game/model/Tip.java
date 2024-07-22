@@ -1,14 +1,28 @@
 package com.cafe.game.game.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
+
+import java.util.UUID;
 
 @Entity
 @Table(name = "tip")
 public class Tip {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @JdbcTypeCode(SqlTypes.CHAR)
+    private UUID id;
+
     @Column(length = 300)
     private String text;
 
@@ -18,8 +32,7 @@ public class Tip {
     @Column
     private Boolean state; // Lock or unlock
 
-    @ManyToOne(cascade = CascadeType.REMOVE)
-    @JoinColumn(name = "puzzleid")
+    @ManyToOne
     private Puzzle puzzle;
 
 }

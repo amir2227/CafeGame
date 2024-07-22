@@ -26,10 +26,10 @@ public class ShopTable {
     private Shop shop;
 
     @Column(nullable = false)
-    private Boolean isBusy;
+    private Boolean isBusy = false;
 
     @Column(nullable = false)
-    private Boolean active;
+    private Boolean active = true;
 
     @OneToMany(mappedBy = "shopTable")
     private List<Customer> customers = new ArrayList<>();

@@ -88,8 +88,6 @@ public class JwtUtils {
         return AuthResponse.builder()
                 .accessToken(token)
                 .refreshToken(refresh)
-
-//                .user(ResponseMapper.map(user))
                 .build();
     }
     private Claims createClaims(User user){

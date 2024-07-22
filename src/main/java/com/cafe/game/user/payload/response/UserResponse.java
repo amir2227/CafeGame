@@ -8,6 +8,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.OffsetDateTime;
 import java.util.Date;
 
 import java.util.Set;
@@ -18,16 +19,16 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserResponse {
-    private Long id;
-    private String nationalId;
+    private UUID id;
+    private String username;
     private String phone;
+    private String email;
     private String fullName;
     private Boolean hasImage;
-    private UUID uuid;
     private Boolean isActive;
     private Boolean isPasswordChanged;
     private UserState userState;
-    private Date createDate;
-    private Date updateDate;
+    private OffsetDateTime createdAt;
+    private OffsetDateTime updatedAt;
     private Set<Role> roles;
 }
